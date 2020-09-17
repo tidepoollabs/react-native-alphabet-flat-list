@@ -14,6 +14,7 @@ interface IProps {
   title: string;
   height: number;
   active: boolean;
+  alphabetTextViewStyles: object;
 }
 
 const SectionListItem: FC<IProps> = function (props) {
@@ -21,13 +22,13 @@ const SectionListItem: FC<IProps> = function (props) {
     <View style={[styles.sectionListItemContainer, {height: props.height}]}>
       <View
         style={[styles.sectionListItemWrapper, {
-          backgroundColor: props.active ? '#0ea8ff' : 'transparent',
+          backgroundColor: 'transparent',
         }]}
       >
         <Text
           style={[styles.sectionListItemText, {
             color: props.active ? 'white' : '#333',
-          }]}
+          }, props.alphabetTextViewStyles]}
         >
           {props.title}
         </Text>

@@ -40,6 +40,8 @@ export interface IProps<ItemT> {
   renderSectionHeader?: ListRenderSectionHeader<SectionHeaderIProps>;
   ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
   alphabetToast?: boolean;
+  alphabetListViewStyles?: object;
+  alphabetTextViewStyles?: object;
 }
 
 const defaultProps = {
@@ -209,6 +211,7 @@ export default class AlphabetFlatList<ItemT> extends Component<IProps<ItemT>, IS
   };
 
   render() {
+    // @ts-ignore
     return (
       <View style={styles.container}
             ref={(ref) => {
@@ -238,6 +241,8 @@ export default class AlphabetFlatList<ItemT> extends Component<IProps<ItemT>, IS
           titles={this.state.titles}
           onSelect={this.onSelect}
           alphabetToast={this.props.alphabetToast}
+          alphabetListViewStyles={this.props.alphabetListViewStyles || {}}
+          alphabetTextViewStyles={this.props.alphabetTextViewStyles || {}}
         />
       </View>
     )

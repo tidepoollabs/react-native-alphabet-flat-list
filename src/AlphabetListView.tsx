@@ -19,6 +19,8 @@ interface IProps {
   titles: string[];
   onSelect: (index: number) => void;
   alphabetToast: boolean;
+  alphabetListViewStyles: object;
+  alphabetTextViewStyles: object;
 }
 
 const initState = {
@@ -106,6 +108,7 @@ class AlphabetListView extends PureComponent<IProps, State> {
             height={itemHeight}
             title={title}
             active={selectAlphabet === title}
+            alphabetTextViewStyles={this.props.alphabetTextViewStyles}
           />
         ))}
       </View>
