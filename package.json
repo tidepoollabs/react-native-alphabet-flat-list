@@ -2,8 +2,8 @@
   "name": "@yoonzm/react-native-alphabet-flat-list",
   "version": "1.3.0",
   "description": "使用FlatList制作的react-native字母选择列表",
-  "main": "built/index.js",
-  "types": "built/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "directories": {
     "example": "example"
   },
