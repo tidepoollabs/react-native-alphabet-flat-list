@@ -98,7 +98,8 @@ class AlphabetListView extends PureComponent<IProps, State> {
           top: topPosition,
           right: 5,
           zIndex: 10,
-          height: contentHeight
+          height: contentHeight,
+          ...this.props.alphabetListViewStyles,
         }}
         {...this.responder.panHandlers}
       >
