@@ -226,7 +226,7 @@ export default class AlphabetFlatList<ItemT> extends Component<IProps<ItemT>, IS
           {...this.props}
           data={this.state.titles}
           renderItem={this.renderItem}
-          keyExtractor={(item, index) => `${index}`}
+          keyExtractor={(item, index) => `${item.id || item.uid || index}`}
           getItemLayout={this.getItemLayout}
           initialNumToRender={this.state.initialNumToRender}
           onViewableItemsChanged={this.onViewableItemsChanged}

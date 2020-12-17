@@ -117,7 +117,7 @@ class AlphabetFlatList extends react_1.Component {
         }} onLayout={this.onLayout}>
         <react_native_1.FlatList ref={(ref) => {
             this.list = ref;
-        }} {...this.props} data={this.state.titles} renderItem={this.renderItem} keyExtractor={(item, index) => `${index}`} getItemLayout={this.getItemLayout} initialNumToRender={this.state.initialNumToRender} onViewableItemsChanged={this.onViewableItemsChanged}/>
+        }} {...this.props} data={this.state.titles} renderItem={this.renderItem} keyExtractor={(item, index) => `${item.id || item.uid || index}`} getItemLayout={this.getItemLayout} initialNumToRender={this.state.initialNumToRender} onViewableItemsChanged={this.onViewableItemsChanged}/>
         <AlphabetListView_1.default ref={(ref) => {
             this.alphabetList = ref;
         }} topPosition={this.props.headerHeight} pageY={this.state.pageY + this.props.headerHeight} contentHeight={this.state.containerHeight - this.props.headerHeight} titles={this.state.titles} onSelect={this.onSelect} alphabetToast={this.props.alphabetToast} alphabetListViewStyles={this.props.alphabetListViewStyles || {}} alphabetTextViewStyles={this.props.alphabetTextViewStyles || {}}/>
