@@ -201,11 +201,16 @@ export default class AlphabetFlatList<ItemT> extends Component<IProps<ItemT>, IS
     return (
       <View key={info.index}>
         {this.props.renderSectionHeader && this.props.renderSectionHeader({title: info.item})}
-        {this.props.data[info.item].map((itemValue, itemIndex, items) => this.props.renderItem({
+        {this.props.data[info.item].map((itemValue, itemIndex, items) =>
+            <View key={`${itemValue.id || itemValue.uid || itemIndex}`}>
+              {this.props.renderItem({
           item: itemValue,
           index: itemIndex,
           last: itemIndex === items.length - 1
-        }))}
+            })}
+            </View>
+            )
+            }
       </View>
     );
   };
